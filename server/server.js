@@ -13,8 +13,10 @@ var app = module.exports = express();
 
 // Dead-Simple Config
 app.set('port', process.env.PORT || 3000);
+app.set('json spaces', 4);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 
 // Enable CORS
 app.use(function(req, res, next) {
