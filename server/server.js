@@ -3,6 +3,7 @@
 // Module dependencies
 var express = require('express'),
   bodyParser = require('body-parser'),
+  Moonboots  = require('moonboots-static'),
   api = require('./api'),
   auth = require('./util/auth'),
   http = require('http'),
@@ -13,7 +14,7 @@ var app = module.exports = express();
 
 // Dead-Simple Config
 app.set('port', process.env.PORT || 3000);
-app.set('json spaces', 4);
+app.set('json spaces', 2);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -30,11 +31,29 @@ app.use(function(req, res, next) {
 app.get('/', api.showEndpoints);
 app.post('/login', api.login);
 app.post('/signup', api.signUp);
-
 app.delete('/user', auth.authorizeToken, api.deleteUser);
 
-// Start the server
-http.createServer(app)
-  .listen(app.get('port'), function () {
-    console.log('\nAPI listening on ' + c.green(app.get('port')));
-  });
+// Configure Moonboots
+var moonboots = new Moonboots({
+  moonboots: {
+    main: './client/app.js',
+    stylesheets: [
+      './public/style.css'
+    ]
+  },
+  directory: './public/www',
+  verbose: false
+});
+
+// Start the server after Moonboots has finished doing its thing
+moonboots.on('ready', function(err) {
+  if (err) {
+    console.log('Uh, something went wrong: ' + err);
+  } else {
+    // Start the server once it has become clear that nothing horrendous occured
+    http.createServer(app)
+      .listen(app.get('port'), function () {
+        console.log('\nAPI listening on ' + c.green(app.get('port')));
+      });
+  }
+});

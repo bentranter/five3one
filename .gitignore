@@ -1,4 +1,5 @@
 node_modules/
+public/www/
 .DS_Store
 rethinkdb_data/
 npm-debug.log
