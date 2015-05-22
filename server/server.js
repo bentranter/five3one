@@ -1,9 +1,10 @@
 'use strict';
 
 // Module dependencies
-var express = require('express'),
+var express  = require('express'),
   bodyParser = require('body-parser'),
   Moonboots  = require('moonboots-static'),
+  liveServer = require('live-server'),
   api = require('./api'),
   auth = require('./util/auth'),
   http = require('http'),
@@ -55,5 +56,13 @@ moonboots.on('ready', function(err) {
       .listen(app.get('port'), function () {
         console.log('\nAPI listening on ' + c.green(app.get('port')));
       });
+
+    // Start liveServer in development only
+    liveServer.start({
+      port: 8000,
+      host: '0.0.0.0',
+      root: './public/www',
+      open: true
+    });
   }
 });
