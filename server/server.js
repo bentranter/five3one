@@ -25,16 +25,11 @@ app.use(function(req, res, next) {
 });
 
 // API Endpoints
-app.get('/i', api.showEndpoints);
+app.get('/', api.showEndpoints);
 app.post('/login', api.login);
 app.post('/signup', api.signUp);
 
 app.delete('/user', auth.authorizeToken, api.deleteUser);
-// app.get('/api/notes', auth.authorizeToken, api.listNotes);
-// app.get('/api/notes/:id', auth.authorizeToken, api.getNote);
-// app.delete('/api/notes/:id', auth.authorizeToken, api.deleteNote);
-// app.put('/api/notes/:id', auth.authorizeToken, api.updateNote);
-// app.post('/api/notes', auth.authorizeToken, api.addNote);
 
 // Start the server
 http.createServer(app)
