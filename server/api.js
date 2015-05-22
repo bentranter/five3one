@@ -22,10 +22,9 @@ var r = thinky.r;
 
 exports.showEndpoints = function(req, res) {
   res.json({
-    'login_url': 'https://api/studypiggy.com/login',
-    'signup_url': 'https://api/studypiggy.com/api/signup',
-    'delete_account_url': 'https://api.studypiggy.com/user',
-    'notes_url': 'https://api.studypiggy.com/notes{/id}'
+    'login_url': '/login',
+    'signup_url': '/signup',
+    'account_url': '/user'
   });
 };
 
