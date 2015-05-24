@@ -41,8 +41,7 @@ var moonboots = new Moonboots({
     stylesheets: [
       './public/style.css'
     ],
-    minify: false,
-    sourceMaps: true
+    minify: false
   },
   directory: './public/www',
   verbose: false
