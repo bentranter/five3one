@@ -40,7 +40,9 @@ var moonboots = new Moonboots({
     main: './client/app.js',
     stylesheets: [
       './public/style.css'
-    ]
+    ],
+    minify: false,
+    sourceMaps: true
   },
   directory: './public/www',
   verbose: false
