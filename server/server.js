@@ -2,6 +2,7 @@
 
 // Module dependencies
 var express  = require('express'),
+  fs         = require('fs'),
   bodyParser = require('body-parser'),
   Moonboots  = require('moonboots-static'),
   liveServer = require('live-server'),
@@ -37,13 +38,25 @@ app.delete('/user', auth.authorizeToken, api.deleteUser);
 // Configure Moonboots
 var moonboots = new Moonboots({
   moonboots: {
-    main: './client/app.js',
-    stylesheets: [
-      './public/style.css'
+    main: __dirname + '/../client/app.js',
+    libraries: [
+      __dirname + '/../node_modules/jquery/dist/jquery.js',
+      __dirname + '/../node_modules/underscore/underscore.js'
     ],
-    minify: false
+    stylesheets: [
+      __dirname + '/../public/style.css'
+    ]
   },
-  directory: './public/www',
+  directory: __dirname + '/../dist/build',
+  htmlSource: function(ctx) {
+    var rp = ctx.resourcePrefix;
+    return [
+      fs.readFileSync(__dirname + '/../public/head.html', 'utf8'),
+      '<link href="' + rp + ctx.cssFileName + '" rel="stylesheet" type="text/css">',
+      fs.readFileSync(__dirname + '/../public/body.html', 'utf8'),
+      '<script src="' + rp + ctx.jsFileName + '"></script>'
+    ].join('\n');
+  },
   verbose: false
 });
 
@@ -62,7 +75,7 @@ moonboots.on('ready', function(err) {
     liveServer.start({
       port: 8000,
       host: '0.0.0.0',
-      root: './public/www',
+      root: './dist/build',
       open: true
     });
   }
