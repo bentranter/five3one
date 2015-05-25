@@ -43,9 +43,10 @@ input[type=url],
 input[type=week] {
   box-sizing: border-box;
   height: 2.25rem;
-  padding: .5rem .5rem;
+  padding: 2rem .5rem;
   vertical-align: middle;
   -webkit-appearance: none;
+  border: 1px solid transparent;
 }
 
 select {
@@ -248,6 +249,12 @@ h6, .h6 { font-size: .75rem }
 .mb4 { margin-bottom: 4rem }
 .ml4 { margin-left: 4rem }
 
+.m5  { margin: 6rem }
+.mt5 { margin-top: 6rem }
+.mr5 { margin-right: 6rem }
+.mb5 { margin-bottom: 6rem }
+.ml5 { margin-left: 6rem }
+
 .mx-auto { margin-left: auto; margin-right: auto; }
 .p1  { padding: .5rem }
 .py1 { padding-top: .5rem; padding-bottom: .5rem }
@@ -302,6 +309,7 @@ hr {
 }
 
 .rounded { border-radius: 3px }
+.pill    { border-radius: 25px }
 
 th,
 td {
@@ -318,9 +326,10 @@ tr:last-child td { border-bottom: 0 }
 
 */
 
-.black  { color: #343d46 }
-.silver { color: #eff1f5 }
+.black  { color: #100d0d }
 .white  { color: #ffffff }
+.yellow { color: #f8df64 }
+.purple { color: #3e549c }
 
 /*
 
@@ -328,21 +337,10 @@ tr:last-child td { border-bottom: 0 }
 
 */
 
-.bg-black   { background-color: #343d46 }
-.bg-silver  { background-color: #eff1f5 }
-.bg-aqua    { background-color: #7fdbff }
-.bg-blue    { background-color: #0074d9 }
-.bg-navy    { background-color: #001f3f }
-.bg-teal    { background-color: #39cccc }
-.bg-green   { background-color: #2ecc40 }
-.bg-olive   { background-color: #3d9970 }
-.bg-lime    { background-color: #01ff70 }
-.bg-yellow  { background-color: #ffdc00 }
-.bg-orange  { background-color: #ff851b }
-.bg-red     { background-color: #ff4136 }
-.bg-fuchsia { background-color: #f012be }
-.bg-purple  { background-color: #b10dc9 }
-.bg-maroon  { background-color: #85144b }
+.bg-black  { background-color: #100d0d }
+.bg-white  { background-color: #fff }
+.bg-yellow { background-color: #f8df64 }
+.bg-purple { background-color: #3e549c }
 
 
 /*
@@ -541,9 +539,9 @@ tr:last-child td { border-bottom: 0 }
 }
 
 .bbl {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #ccc;
+  border-bottom-style: solid !important;
+  border-bottom-width: 1px !important;
+  border-bottom-color: #4d4d4f !important;
 }
 
 .bll {
