@@ -4,3 +4,4 @@ public/www/
 rethinkdb_data/
 npm-debug.log
 *.sketch
+mocks/
