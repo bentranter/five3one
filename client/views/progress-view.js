@@ -1,7 +1,9 @@
+var app = app || {};
+
 (function() {
   'use strict';
 
-  var progressView = Backbone.View.extend({
+  app.ProgressView = Backbone.View.extend({
 
   });
 })();

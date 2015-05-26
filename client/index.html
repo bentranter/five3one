@@ -10,6 +10,18 @@
   </head>
   <body class='bg-black p2 mt4'>
 
+    <script id='meTpl' type='text/template'>
+    </script>
+
+    <script id='newWorkoutTpl' type='text/template'>
+    </script>
+
+    <script id='progressTpl' type='text/template'>
+    </script>
+
+    <script id='timelineTpl' type='text/template'>
+    </script>
+
     <!-- Sign Up -->
     <section id='signup'>
       <h1 class='white center'>five3one</h1>
@@ -28,19 +40,21 @@
     <!-- Bottom Menu -->
     <ul class='list-reset cf absolute left-0 right-0 bottom-0'>
       <li class='col col-3 center'><a href='#newworkout'>New</a></li>
-      <li class='col col-3 center'><a href='#newworkout'>New</a></li>
+      <li class='col col-3 center'><a href='#me'>New</a></li>
       <li class='col col-3 center'><a href='#newworkout'>New</a></li>
       <li class='col col-3 center'><a href='#user'>Me</a></li>
     </ul>
+
+    <script src='backbone.js'></script>
+    <script src='collections/workouts.js'></script>
+    <script src='models/user.js'></script>
+    <script src='models/workout.js'></script>
+    <script src='views/new-workout-view.js'></script>
+    <script src='views/timeline-view.js'></script>
+    <script src='views/progress-view.js'></script>
+    <script src='views/me-view.js'></script>
+    <script src='routers/router.js'></script>
+    <script src='app.js'></script>
   </body>
-  <script src='backbone.js'></script>
-  <script src='collections/workouts.js'></script>
-  <script src='models/user.js'></script>
-  <script src='models/workout.js'></script>
-  <script src='views/new-workout-view.js'></script>
-  <script src='views/timeline-view.js'></script>
-  <script src='views/progress-view.js'></script>
-  <script src='views/me-view.js'></script>
-  <script src='app.js'></script>
 
 </html>

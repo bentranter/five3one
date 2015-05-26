@@ -1,7 +1,9 @@
+var app = app || {};
+
 (function() {
   'use strict';
 
-  var timelineView = Backbone.View.extend({
+  app.TimelineView = Backbone.View.extend({
 
   });
 })();

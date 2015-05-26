@@ -1,7 +1,11 @@
+var app = app || {};
+
 (function() {
   'use strict';
 
-  var meView = Backbone.View.extend({
-
+  app.MeView = Backbone.View.extend({
+    initialize: function() {
+      console.log('Rendered MeView');
+    }
   });
 })();

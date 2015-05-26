@@ -1,7 +1,9 @@
+var app = app || {};
+
 (function() {
   'use strict';
 
-  var User = Backbone.Model.extend({
+  app.User = Backbone.Model.extend({
 
     // Endpoint for signing in/getting token. You can use `User.fetch` to get
     // a token
@@ -24,7 +26,7 @@
     },
 
     // Sign in success - this should be called after a sucessful fetch
-    signIn: function(token) {
+    signIn: function(user) {
       window.localStorage.set('token', user.token);
       this.model.set('signedIn', true);
     }

@@ -1,7 +1,9 @@
+var app = app || {};
+
 (function() {
   'use strict';
 
-  var Workout = Backbone.Model.extend({
+  app.Workout = Backbone.Model.extend({
     defaults: {
 
     }

@@ -1,7 +1,9 @@
+var app = app || {};
+
 (function() {
   'use strict';
 
-  var Workouts = Backbone.Collection.extend({
+  app.Workouts = Backbone.Collection.extend({
 
   });
 })();

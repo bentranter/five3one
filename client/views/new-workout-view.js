@@ -1,7 +1,9 @@
+var app = app || {};
+
 (function() {
   'use strict';
 
-  var newWorkoutView = Backbone.View.extend({
+  app.NewWorkoutView = Backbone.View.extend({
 
   });
 })();

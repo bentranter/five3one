@@ -4,7 +4,7 @@ var app = app || {};
   'use strict';
 
   // Routes: used for matching views to a model or collection
-  var Router = Backbone.Router.extend({
+  app.Router = Backbone.Router.extend({
     routes: {
       '': 'home',
       'me': 'me',
@@ -14,22 +14,22 @@ var app = app || {};
     },
 
     me: function() {
-      
+      new app.MeView();
     },
 
     newWorkout: function(id) {
-      
+      new app.NewWorkoutView();
     },
 
     progress: function() {
-
+      new app.ProgressView();
     },
 
     timeline: function() {
-
+      new app.TimelineView();
     }
   });
 
-  app.router = new Router();
+  app.router = new app.Router();
 
 })();
