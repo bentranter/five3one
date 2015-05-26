@@ -14,20 +14,26 @@ var app = app || {};
     },
 
     me: function() {
-      new app.MeView();
+      app.currentView.remove();
+      app.currentView = new app.MeView();
     },
 
     newWorkout: function(id) {
-      new app.NewWorkoutView();
+      app.currentView.remove();
+      app.currentView = new app.NewWorkoutView();
     },
 
     progress: function() {
-      new app.ProgressView();
+      app.currentView.remove();
+      app.currentView = new app.ProgressView();
     },
 
     timeline: function() {
-      new app.TimelineView();
+      app.currentView.remove();
+      app.currentView = new app.TimelineView();
     }
+
+
   });
 
   app.router = new app.Router();
