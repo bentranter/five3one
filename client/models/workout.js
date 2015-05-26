@@ -1,10 +1,9 @@
-'use strict';
+(function() {
+  'use strict';
 
-// Modue dependencies
-var Backbone = require('backbone');
+  var Workout = Backbone.Model.extend({
+    defaults: {
 
-module.exports = Backbone.Model.extend({
-  defaults: {
-
-  }
-});
+    }
+  });
+})();
