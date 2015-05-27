@@ -15,18 +15,26 @@ var app = app || {};
 
     me: function() {
       new app.MeView();
+      $('.js-footer.active').removeClass('active');
+      $('.js-footer.js-me').addClass('active');
     },
 
-    newWorkout: function(id) {
+    newWorkout: function() {
       new app.NewWorkoutView();
+      $('.js-footer.active').removeClass('active');
+      $('.js-footer.js-new-workout').addClass('active');
     },
 
     progress: function() {
       new app.ProgressView();
+      $('.js-footer.active').removeClass('active');
+      $('.js-footer.js-progress').addClass('active');
     },
 
     timeline: function() {
       new app.TimelineView();
+      $('.js-footer.active').removeClass('active');
+      $('.js-footer.js-timeline').addClass('active');
     }
   });
 
