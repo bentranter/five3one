@@ -273,7 +273,7 @@ h6, .h6 { font-size: .75rem }
 
 .mx-auto { margin-left: auto; margin-right: auto; }
 .p1  { padding: .5rem }
-.py1 { padding-top: .5rem; padding-bottom: .5rem }
+.py1 { padding-top: .75rem; padding-bottom: .75rem }
 .px1 { padding-left: .5rem; padding-right: .5rem }
 
 .p2  { padding: 1rem }
@@ -405,6 +405,10 @@ tr:last-child td { border-bottom: 0 }
 
 .bl {
   border: 2px solid #fffeff;
+}
+
+.top-offset {
+  top: 60px;
 }
 
 .bottom-offset {

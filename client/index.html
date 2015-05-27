@@ -21,11 +21,20 @@
           <h1>New Workout</h1>
         </div>
         <div class='col col-4 right-align'>
-          <button class='right-align btn light small mt1'>Bench Press 
+          <button id='selectWorkout' class='right-align btn light small mt1'>Bench Press 
             <svg height='12px' width='12px' viewBox='0 0 32 32' style='fill:currentcolor'><title>triangleDown icon</title><path d='M4 8 H28 L16 26 z' ></path></svg>
           </button>
         </div>
         <div class='cf'></div>
+        <!-- Workout Dropdown -->
+        <div id='workoutDropdown' class='absolute right-0 top-offset bg-light hide'>
+          <ul class='list-reset m0 p1 light small'>
+            <li>Bench Press</li>
+            <li>Squat</li>
+            <li>Deadlift</li>
+            <li>Overhead Press</li>
+          </ul>
+        </div>
       </header>
       <main class='px2 py3'>
         <div class='col col-6'>
@@ -44,7 +53,7 @@
           <h1>1:27.04</h1>
           <button class='btn caps green'>Pause</button>
         </div>
-        <div class='center py4'>
+        <div class='center mt4'>
           <button class='btn caps white bl px4 py1 pill'>Finish</button>
         </div>
       </main>

@@ -8,6 +8,11 @@ var app = app || {};
 
     template: _.template($('#newWorkoutTpl').html()),
 
+    events: {
+      'click .js-circle': 'toggleCircle',
+      'click #selectWorkout': 'showWorkoutDropdown'
+    },
+
     initialize: function() {
       this.render();
     },
@@ -15,6 +20,14 @@ var app = app || {};
     render: function() {
       console.log('Rendered new workout');
       this.$el.html(this.template());
+    },
+
+    toggleCircle: function(e) {
+      e.target.classList.toggle('js-circle-filled-in');
+    },
+
+    showWorkoutDropdown: function() {
+      $('#workoutDropdown').toggleClass('hide');
     }
   });
 })();
