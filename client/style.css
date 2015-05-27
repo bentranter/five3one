@@ -10,6 +10,12 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Lazy */
+*, *:after, *:before {
+  -webkit-font-smoothing: antialised;
+  font-weight: 300;
+}
+
 body, button { margin: 0 }
 
 button, input, select, textarea {
@@ -84,9 +90,10 @@ button,
   cursor: pointer;
   display: inline-block;
   box-sizing: border-box;
-  padding: .5rem 1rem;
+  padding: 0;
   margin: 0;
   height: auto;
+  background: transparent;
   border: 1px solid transparent;
   vertical-align: middle;
   -webkit-appearance: none;
@@ -130,10 +137,18 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 300;
   line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: .5em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1, h2, h3 {
+  color: #fffeff;
+}
+
+h4, h5, h6 {
+  color: #afaeb4;
 }
 
 p, dl, ol, ul {
@@ -171,7 +186,7 @@ blockquote {
     font-style: italic;
   }
 
-h1, .h1 { font-size: 2rem }
+h1, .h1 { font-size: 1.75rem }
 h2, .h2 { font-size: 1.5rem }
 h3, .h3 { font-size: 1.25rem }
 h4, .h4 { font-size: 1rem }
@@ -211,6 +226,7 @@ h6, .h6 { font-size: .75rem }
 .light   { font-weight: lighter }
 .italic  { font-style: italic }
 .caps    { text-transform: uppercase }
+.small   { font-size: .75rem }
 
 .left-align   { text-align: left }
 .center       { text-align: center }
@@ -272,28 +288,19 @@ h6, .h6 { font-size: .75rem }
 .py4 { padding-top: 4rem; padding-bottom: 4rem }
 .px4 { padding-left: 4rem; padding-right: 4rem }
 
-.absolute-center-wrapper {
-  display: table;
-  height: 100vh;
-}
-
-.absolute-center {
-  display: table-cell;
-  vertical-align: middle;
-}
-
 body {
   color: #333;
   background-color: white;
 }
 
 a {
-  color: #ccc;
+  color: #867d90;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #fffeff;
+  text-decoration: none;
 }
 
 pre, code {
@@ -326,10 +333,11 @@ tr:last-child td { border-bottom: 0 }
 
 */
 
-.black  { color: #100d0d }
-.white  { color: #ffffff }
-.yellow { color: #f8df64 }
-.purple { color: #3e549c }
+.white { color: #fffeff }
+.light { color: #afaeb4 }
+.dark  { color: #867d90 }
+.red   { color: #f88ba8 }
+.green { color: #7cf2c2 }
 
 /*
 
@@ -337,59 +345,10 @@ tr:last-child td { border-bottom: 0 }
 
 */
 
-.bg-black  { background-color: #100d0d }
-.bg-white  { background-color: #fff }
-.bg-yellow { background-color: #f8df64 }
-.bg-purple { background-color: #3e549c }
-
-
-/*
-
-    Responsive Utilities
-
-*/
-
-.sm-show,
-.md-show,
-.lg-show {
-  display: none !important;
-}
-
-@media (min-width: 40em) {
-  .sm-show {
-    display: block !important;
-  }
-}
-
-@media (min-width: 52em) {
-  .md-show {
-    display: block !important;
-  }
-}
-
-@media (min-width: 64em) {
-  .lg-show {
-    display: block !important;
-  }
-}
-
-@media (min-width: 40em) {
-  .sm-hide {
-    display: none !important;
-  }
-}
-
-@media (min-width: 52em) {
-  .md-hide {
-    display: none !important;
-  }
-}
-
-@media (min-width: 64em) {
-  .lg-hide {
-    display: none !important;
-  }
-}
+.bg-light { background-color: #3d354d }
+.bg-dark  { background-color: #342d41 }
+.bg-red   { background-color: #f88ba8 }
+.bg-green { background-color: #7cf2c2 }
 
 .display-none { display: none !important }
 
@@ -444,199 +403,16 @@ tr:last-child td { border-bottom: 0 }
 .col-11 { width: 91.66667% }
 .col-12 { width: 100% }
 
-@media (min-width: 40em) {
-  .sm-col {
-    float: left;
-    box-sizing: border-box;
-  }
-
-  .sm-col-right {
-    float: right;
-    box-sizing: border-box;
-  }
-
-  .sm-col-1 { width: 8.33333% }
-  .sm-col-2 { width: 16.66667% }
-  .sm-col-3 { width: 25% }
-  .sm-col-4 { width: 33.33333% }
-  .sm-col-5 { width: 41.66667% }
-  .sm-col-6 { width: 50% }
-  .sm-col-7 { width: 58.33333% }
-  .sm-col-8 { width: 66.66667% }
-  .sm-col-9 { width: 75% }
-  .sm-col-10 { width: 83.33333% }
-  .sm-col-11 { width: 91.66667% }
-  .sm-col-12 { width: 100% }
+.bl {
+  border: 2px solid #fffeff;
 }
-
-@media (min-width: 52em) {
-  .md-col {
-    float: left;
-    box-sizing: border-box;
-  }
-
-  .md-col-right {
-    float: right;
-    box-sizing: border-box;
-  }
-
-  .md-col-1 { width: 8.33333% }
-  .md-col-2 { width: 16.66667% }
-  .md-col-3 { width: 25% }
-  .md-col-4 { width: 33.33333% }
-  .md-col-5 { width: 41.66667% }
-  .md-col-6 { width: 50% }
-  .md-col-7 { width: 58.33333% }
-  .md-col-8 { width: 66.66667% }
-  .md-col-9 { width: 75% }
-  .md-col-10 { width: 83.33333% }
-  .md-col-11 { width: 91.66667% }
-  .md-col-12 { width: 100% }
-}
-
-@media (min-width: 64em) {
-  .lg-col {
-    float: left;
-    box-sizing: border-box;
-  }
-
-  .lg-col-right {
-    float: right;
-    box-sizing: border-box;
-  }
-  .lg-col-1 { width: 8.33333% }
-  .lg-col-2 { width: 16.66667% }
-  .lg-col-3 { width: 25% }
-  .lg-col-4 { width: 33.33333% }
-  .lg-col-5 { width: 41.66667% }
-  .lg-col-6 { width: 50% }
-  .lg-col-7 { width: 58.33333% }
-  .lg-col-8 { width: 66.66667% }
-  .lg-col-9 { width: 75% }
-  .lg-col-10 { width: 83.33333% }
-  .lg-col-11 { width: 91.66667% }
-  .lg-col-12 { width: 100% }
-}
-
-/*
-
-    Borders
-
-*/
-
-.bl { border: 1px solid #ccc }
-
-.btl {
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #ccc;
-}
-
-.brl {
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-right-color: #ccc;
-}
-
-.bbl {
-  border-bottom-style: solid !important;
-  border-bottom-width: 1px !important;
-  border-bottom-color: #4d4d4f !important;
-}
-
-.bll {
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-left-color: #ccc;
-}
-
-.bd { border: 1px solid #555 }
-
-.btd {
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #555;
-}
-
-.brd {
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-right-color: #555;
-}
-
-.bbd {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #555;
-}
-
-.bld {
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-left-color: #555;
-}
-
-.rounded { border-radius: 3px }
-.circle { border-radius: 50% }
 
 .bottom-offset {
   bottom: 40px;
 }
 
 .active {
-  color: blue;
-}
-
-/*
-
-    Tooltips - I can't believe how complicated these are!!!
-
-*/
-
-.tooltip {
-  position: relative;
-}
-
-.tooltip:before {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-top: .25rem;
-  margin-left: -.5rem;
-  content: '';
-  height: 0;
-  width: 0;
-  border-left: .5rem solid transparent;
-  border-right: .5rem solid transparent;
-  border-bottom: .5rem solid rgba(0,0,0,.8);
-}
-
-.tooltip:after {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 50%;
-  transform: translateX(50%);
-  margin-top: .75rem;
-  content: attr(aria-label);
-  font-size: .75rem;
-  font-weight: normal;
-  -webkit-font-smoothing: subpixel-antialiased;
-  word-wrap: break-word; 
-  white-space: pre;
-  border-radius: 3px;
-  padding: .25rem .5rem;
-  background: rgba(0,0,0,.8);
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.27);
-  color: white;
-}
-
-.tooltip:hover:before,
-.tooltip:focus:before,
-.tooltip:hover:after,
-.tooltip:focus:after {
-  display: block;
+  color: #fffeff;
 }
 
 /*
@@ -646,6 +422,7 @@ tr:last-child td { border-bottom: 0 }
 */
 
 .btn {
+  background-color: rgba(0,0,0,0);
   -webkit-transition-duration: .05s;
           transition-duration: .05s;
   -webkit-transition-timing-function: ease-out;
@@ -660,36 +437,18 @@ tr:last-child td { border-bottom: 0 }
 
 /*
 
-    Hover Utilities??? (This will change)
+    JS Utility Styles
 
 */
-
-.h-rise:hover {
-  transition: box-shadow 0.2s ease-in-out;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.54);
+.js-circle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: .25rem;
+  border: 2px solid #f88ba8;
+  border-radius: 50%;
 }
 
-.h-spin:hover {
-  transition: transform 0.8s cubic-bezier(0,0,0.58,1);
-  transform: rotate(360deg);
-}
-
-/*
-
-    Active Utilities??? (This will also probably change)
-
-*/
-
-.a-sink:active {
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.26), inset 0 5px 20px rgba(0, 0, 0, 0.54);
-}
-
-/*
-
-    Focus Utilities??? (idk at this point)
-
-*/
-
-.f-no-outline-unsafe:focus {
-  outline: none;
+.js-circle-filled-in {
+  background-color: #f88ba8;
 }

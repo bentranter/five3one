@@ -1,6 +1,6 @@
-# 5-3-1
+# five3one
 
-An excuse to learn Ampersand.JS with domthing
+A simple mobile web app to track your exercise.
 
 ### Usage
 

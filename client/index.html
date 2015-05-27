@@ -8,28 +8,56 @@
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <link href='/style.css' rel='stylesheet' type='text/css'>
   </head>
-  <body class='bg-black p2 mt4'>
-  
+  <body class='bg-dark gray'>
     <!-- Templates -->
     <script id='meTpl' type='text/template'>
-      <h1 class='white center'>five3one</h1>
-      <form class='fieldset-reset mt5'>
-        <input type='text' class='center bbl block mx-auto mb3 bg-black white full-width bbl' placeholder='E-mail'>
-        <input type='password' class='center bbl block mx-auto mb5 bg-black white full-width bbl' placeholder='Password'>
-        <input type='submit' class='btn center mx-auto block bg-purple white pill full-width' value='Sign In'>
-      </form>
-      <a href='#signup' class='center block mt4'>Dont have an account?</a>
+      <header class='bg-light px2 py1'>
+        <h1>Account</h1>
+      </header>
     </script>
     <script id='newWorkoutTpl' type='text/template'>
-      <h1>New Workout</h1>
-      <p>Why wont anything render</p>
+      <header class='bg-light px2 py1'>
+        <div class='col col-8'>
+          <h1>New Workout</h1>
+        </div>
+        <div class='col col-4 right-align'>
+          <button class='right-align btn light small mt1'>Bench Press 
+            <svg height='12px' width='12px' viewBox='0 0 32 32' style='fill:currentcolor'><title>triangleDown icon</title><path d='M4 8 H28 L16 26 z' ></path></svg>
+          </button>
+        </div>
+        <div class='cf'></div>
+      </header>
+      <main class='px2 py3'>
+        <div class='col col-6'>
+          <h4 class='white caps'>Set 1</h4>
+        </div>
+        <div class='col col-6'>
+          <h4 class='right-align'>5 &times; 125lbs</h4>
+        </div>
+        <div class='cf'></div>
+        <div class='center mx-auto py3 mt2'>
+          <button class='js-circle js-circle-filled-in'></button>
+          <button class='js-circle'></button>
+          <button class='js-circle'></button>
+        </div>
+        <div class='center py3'>
+          <h1>1:27.04</h1>
+          <button class='btn caps green'>Pause</button>
+        </div>
+        <div class='center py4'>
+          <button class='btn caps white bl px4 py1 pill'>Finish</button>
+        </div>
+      </main>
     </script>
     <script id='progressTpl' type='text/template'>
-      <h1>Progress</h1>
-      <p>Rener you ashhole</p>
+      <header class='bg-light px2 py1'>
+        <h1>Progress</h1>
+      </header>
     </script>
     <script id='timelineTpl' type='text/template'>
-      <h1 class='white'>Timeline</h1>
+      <header class='bg-light px2 py1'>
+        <h1>Timeline</h1>
+      </header>
     </script>
 
     <!-- Main Content Area -->
@@ -38,12 +66,12 @@
     </div>
 
     <!-- Bottom Menu -->
-    <div class='absolute left-0 right-0 bottom-0'>
-      <ul class='list-reset cf'>
-        <li class='col col-3 center'><a class='js-footer js-new-workout' href='#newworkout'>New Workout</a></li>
-        <li class='col col-3 center'><a class='js-footer js-timeline' href='#timeline'>Timeline</a></li>
-        <li class='col col-3 center'><a class='js-footer js-progress' href='#progress'>Progress</a></li>
-        <li class='col col-3 center'><a class='js-footer js-me' href='#me'>Me</a></li>
+    <div class='absolute left-0 right-0 bottom-0 bg-light'>
+      <ul class='list-reset m0 py1 cf'>
+        <li class='col col-3 center'><a class='js-footer js-new-workout' href='#newworkout'>New</a></li>
+        <li class='col col-3 center m0'><a class='js-footer js-timeline' href='#timeline'>Timeline</a></li>
+        <li class='col col-3 center m0'><a class='js-footer js-progress' href='#progress'>Progress</a></li>
+        <li class='col col-3 center m0'><a class='js-footer js-me' href='#me'>Me</a></li>
       </ul>
     </div>
 
