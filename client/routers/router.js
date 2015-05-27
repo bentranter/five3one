@@ -8,32 +8,26 @@ var app = app || {};
     routes: {
       '': 'home',
       'me': 'me',
-      'new-workout': 'newWorkout',
+      'newworkout': 'newWorkout',
       'progress': 'progress',
       'timeline': 'timeline'
     },
 
     me: function() {
-      app.currentView.remove();
-      app.currentView = new app.MeView();
+      new app.MeView();
     },
 
     newWorkout: function(id) {
-      app.currentView.remove();
-      app.currentView = new app.NewWorkoutView();
+      new app.NewWorkoutView();
     },
 
     progress: function() {
-      app.currentView.remove();
-      app.currentView = new app.ProgressView();
+      new app.ProgressView();
     },
 
     timeline: function() {
-      app.currentView.remove();
-      app.currentView = new app.TimelineView();
+      new app.TimelineView();
     }
-
-
   });
 
   app.router = new app.Router();

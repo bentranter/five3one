@@ -4,8 +4,17 @@ var app = app || {};
   'use strict';
 
   app.MeView = Backbone.View.extend({
+    el: '#main',
+
+    template: _.template($('#meTpl').html()),
+
     initialize: function() {
-      console.log('Rendered MeView');
+      this.render();
+    },
+
+    render: function() {
+      console.log('Rendered meTpl');
+      this.$el.html(this.template());
     }
   });
 })();
