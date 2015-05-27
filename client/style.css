@@ -407,6 +407,12 @@ tr:last-child td { border-bottom: 0 }
   border: 2px solid #fffeff;
 }
 
+.bb {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #867d90;
+}
+
 .top-offset {
   top: 60px;
 }

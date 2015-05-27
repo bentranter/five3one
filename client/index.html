@@ -65,8 +65,59 @@
     </script>
     <script id='timelineTpl' type='text/template'>
       <header class='bg-light px2 py1'>
-        <h1>Timeline</h1>
+        <div class='col col-8'>
+          <h1>Timeline</h1>
+        </div>
+        <div class='col col-4 right-align'>
+          <button id='selectWorkout' class='right-align btn light small mt1'>All Exercises 
+            <svg height='12px' width='12px' viewBox='0 0 32 32' style='fill:currentcolor'><title>triangleDown icon</title><path d='M4 8 H28 L16 26 z' ></path></svg>
+          </button>
+        </div>
+        <div class='cf'></div>
+        <!-- Workout Dropdown -->
+        <div id='workoutDropdown' class='absolute right-0 top-offset bg-light hide'>
+          <ul class='list-reset m0 p1 light small'>
+            <li>Bench Press</li>
+            <li>Squat</li>
+            <li>Deadlift</li>
+            <li>Overhead Press</li>
+          </ul>
+        </div>
       </header>
+      <main class='px2'>
+        <section class='bb py2 mt2'>
+          <div class='col col-6'>
+            <h4 class='white caps'>Bench</h4>
+          </div>
+          <div class='col col-6'>
+            <h4 class='right-align light'>May 27</h4>
+          </div>
+          <div class='cf'></div>
+          <div class='col col-10'>
+            <h5 class='light mt1'>5 &times; 125lbs, 3 &times; 145lbs, 1 &times; 160lbs</h4>
+          </div>
+          <div class='col col-2'>
+            <span class='green mt1'><!-- Checkmark icon goes here --></span>
+          </div>
+          <div class='cf'></div>
+        </section>
+        <section class='bb py2 mt2'>
+          <div class='col col-6'>
+            <h4 class='white caps'>Squat</h4>
+          </div>
+          <div class='col col-6'>
+            <h4 class='right-align light'>May 25</h4>
+          </div>
+          <div class='cf'></div>
+          <div class='col col-10'>
+            <h5 class='light mt1'>5 &times; 185lbs, 3 &times; 225lbs, 1 &times; 245lbs</h4>
+          </div>
+          <div class='col col-2'>
+            <span class='green mt1'><!-- Checkmark icon goes here --></span>
+          </div>
+          <div class='cf'></div>
+        </section>
+      </main>
     </script>
 
     <!-- Main Content Area -->
