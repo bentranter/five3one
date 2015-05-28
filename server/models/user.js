@@ -12,14 +12,20 @@ var type = thinky.type;
 var User = thinky.createModel('User', {
   username: type.string(),
   password: type.string(),
-  date: type.date().default(r.now())
+  firstName: type.string(),
+  lastName: type.string(),
+  createdAt: type.date().default(r.now()),
+  squat: type.number(),
+  deadLift: type.number(),
+  benchPress: type.number(),
+  overheadPress: type.number()
   }, {
   // Make the username the primary key
   pk: 'username'
 });
 
 // Ensure index for ordering
-User.ensureIndex('date');
+User.ensureIndex('createdAt');
 
 // Salt and hash the password on save
 User.pre('save', function(next) {
@@ -32,7 +38,7 @@ User.pre('save', function(next) {
     }
 
     // Hash the password
-    bcrypt.hash(user.password, salt, null, function(err, hash) {
+    bcrypt.hash(user.password, salt, function(err, hash) {
       if (err) {
           return console.log(c.red('Errors while hashing password: ') + err);
       } else {

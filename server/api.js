@@ -85,12 +85,19 @@ exports.signUp = function(req, res) {
   // Create new instance of 'User' model
   var user = new User({
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    squat: parseInt(req.body.squat),
+    deadLift: parseInt(req.body.deadLift),
+    benchPress: parseInt(req.body.benchPress),
+    overheadPress: parseInt(req.body.overheadPress)
   });
 
   // Save the person and check for errors kind-of. It'll also call `save`'s `pre` hook
   user.save(function(err, doc) {
   if (err) {
+    // This will also get thrown if something fails validation
     res.status(403).json({
       error: 'Username already taken. Choose a different username.'
     });

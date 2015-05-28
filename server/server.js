@@ -46,5 +46,5 @@ liveServer.start({
 // Start the server once it has become clear that nothing horrendous occured
 http.createServer(app)
   .listen(app.get('port'), function () {
-    console.log(c.green('\nExpress ') + 'listening on port 3000');
+    console.log(c.green('Express ') + 'listening on port 3000');
   });
