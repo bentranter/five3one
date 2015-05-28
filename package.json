@@ -4,7 +4,7 @@
   "description": "Whatever",
   "main": "server.js",
   "scripts": {
-    "test": "echo 'dont test code lol'",
+    "test": "mocha server/",
     "start": "node server/server.js"
   },
   "keywords": [
