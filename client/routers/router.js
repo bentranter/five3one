@@ -14,25 +14,29 @@ var app = app || {};
     },
 
     me: function() {
-      new app.MeView();
+      $('.js-tpl.tpl-active').removeClass('tpl-active');
+      $('.js-tpl.js-tpl-me').addClass('tpl-active');
       $('.js-footer.active').removeClass('active');
       $('.js-footer.js-me').addClass('active');
     },
 
     newWorkout: function() {
-      new app.NewWorkoutView();
+      $('.js-tpl.tpl-active').removeClass('tpl-active');
+      $('.js-tpl.js-tpl-new-workout').addClass('tpl-active');
       $('.js-footer.active').removeClass('active');
       $('.js-footer.js-new-workout').addClass('active');
     },
 
     progress: function() {
-      new app.ProgressView();
+      $('.js-tpl.tpl-active').removeClass('tpl-active');
+      $('.js-tpl.js-tpl-progress').addClass('tpl-active');
       $('.js-footer.active').removeClass('active');
       $('.js-footer.js-progress').addClass('active');
     },
 
     timeline: function() {
-      new app.TimelineView();
+      $('.js-tpl.tpl-active').removeClass('tpl-active');
+      $('.js-tpl.js-tpl-timeline').addClass('tpl-active');
       $('.js-footer.active').removeClass('active');
       $('.js-footer.js-timeline').addClass('active');
     }

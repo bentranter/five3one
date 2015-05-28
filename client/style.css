@@ -462,3 +462,16 @@ tr:last-child td { border-bottom: 0 }
 .js-circle-filled-in {
   background-color: #f88ba8;
 }
+
+/** 
+ * I don't know if this is a good practice or not,
+ * but it works for this app.
+ */
+
+.js-tpl {
+  display: none;
+}
+
+.tpl-active {
+  display: block !important;
+}

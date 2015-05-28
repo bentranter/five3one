@@ -19,7 +19,8 @@ var app = app || {};
 
     render: function() {
       console.log('Rendered new workout');
-      this.$el.html(this.template());
+      // Just append the template to the main view, since the router toggles visibility
+      this.$el.append(this.template());
     },
 
     toggleCircle: function(e) {

@@ -14,7 +14,7 @@ var app = app || {};
 
     render: function() {
       console.log('Rendered timeline');
-      this.$el.html(this.template());
+      this.$el.append(this.template());
     }
   });
 })();
