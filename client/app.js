@@ -6,7 +6,9 @@ var app = app || {};
   document.addEventListener('DOMContentLoaded', function() {
 
     // Init each view
-    new app.MeView();
+    new app.MeView({
+      model: new app.User()
+    });
     new app.NewWorkoutView();
     new app.ProgressView();
     new app.TimelineView();

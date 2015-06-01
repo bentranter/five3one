@@ -2,7 +2,6 @@
 
 // Module dependencies
 var express  = require('express'),
-  fs         = require('fs'),
   bodyParser = require('body-parser'),
   liveServer = require('live-server'),
   api = require('./api'),
@@ -30,6 +29,7 @@ app.use(function(req, res, next) {
 // API Endpoints
 app.get('/', api.showEndpoints);
 app.post('/login', api.login);
+app.put('/login', api.login);
 app.post('/signup', api.signUp);
 app.delete('/user', auth.authorizeToken, api.deleteUser);
 

@@ -7,7 +7,7 @@ var app = app || {};
 
     // Endpoint for signing in/getting token. You can use `User.fetch` to get
     // a token
-    urlRoot: '/signin',
+    urlRoot: 'http://0.0.0.0:3000/login',
 
     // Defaults for determining signed in state
     defaults: {
@@ -18,11 +18,11 @@ var app = app || {};
 
     // Check to see if a user is signed in when the model is initialized
     initialize: function() {
-      if (window.localStorage.get('token')) {
-        this.model.set('signedIn', true);
-      } else {
-        return;
-      }
+      // if (window.localStorage.get('token')) {
+      //   this.model.set('signedIn', true);
+      // } else {
+      //   return;
+      // }
     },
 
     // Sign in success - this should be called after a sucessful fetch

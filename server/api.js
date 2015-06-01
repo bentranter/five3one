@@ -29,7 +29,7 @@ exports.showEndpoints = function(req, res) {
 };
 
 /**
- * Login to StudyPiggy. Finds the username, and compares
+ * Login. Finds the username, and compares
  * passwords to indicate a successful signin attempt.
  *
  * @param {Object} the request sent to our server
