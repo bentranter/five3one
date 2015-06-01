@@ -28,6 +28,8 @@ var app = app || {};
       var username = this.$('#username').val();
       var password = this.$('#password').val();
 
+      this.model.signIn();
+
       this.model.save({
         username: username,
         password: password

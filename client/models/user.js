@@ -18,11 +18,11 @@ var app = app || {};
 
     // Check to see if a user is signed in when the model is initialized
     initialize: function() {
-      // if (window.localStorage.get('token')) {
-      //   this.model.set('signedIn', true);
-      // } else {
-      //   return;
-      // }
+      if (window.localStorage.getItem('token')) {
+        this.model.set('signedIn', true);
+      } else {
+        return;
+      }
     },
 
     // Sign in success - this should be called after a sucessful fetch

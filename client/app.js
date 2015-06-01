@@ -4,10 +4,11 @@ var app = app || {};
   'use strict';
 
   document.addEventListener('DOMContentLoaded', function() {
+    var user = new app.User();
 
     // Init each view
     new app.MeView({
-      model: new app.User()
+      model: user
     });
     new app.NewWorkoutView();
     new app.ProgressView();
