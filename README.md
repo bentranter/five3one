@@ -14,7 +14,7 @@ $ npm start
 With RethinkDB and the server started,
 
 ```bash
-$ npm test
+$ npm run test
 ```
 
 ### Weird Backbone Practice
