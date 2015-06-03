@@ -25,17 +25,17 @@ var app = app || {};
     login: function(e) {
       e.preventDefault();
 
+      var self = this;
       var username = this.$('#username').val();
       var password = this.$('#password').val();
-
-      this.model.signIn();
 
       this.model.save({
         username: username,
         password: password
       }, {
         success: function(model, res, opts) {
-          console.log(res.token); 
+          console.log(res.token);
+          self.model.signIn(res.token);
         }
       });
     }

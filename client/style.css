@@ -408,9 +408,9 @@ tr:last-child td { border-bottom: 0 }
 }
 
 .bb {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #867d90;
+  border-bottom-width: 1px !important;
+  border-bottom-style: solid !important;
+  border-bottom-color: #867d90 !important;
 }
 
 .top-offset {
@@ -474,4 +474,14 @@ tr:last-child td { border-bottom: 0 }
 
 .tpl-active {
   display: block !important;
+}
+
+/*
+
+    Don't use this unless you know what you're doing
+
+*/
+
+.focus-no-outline-unsafe:focus {
+  outline: none;
 }
