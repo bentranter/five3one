@@ -25,7 +25,8 @@ exports.showEndpoints = function(req, res) {
   res.json({
     'login_url': '/login',
     'signup_url': '/signup',
-    'account_url': '/user'
+    'account_url': '/user',
+    'workouts_url': '/workouts{/:id}'
   });
 };
 
@@ -150,7 +151,7 @@ exports.deleteUser = function(req, res) {
  * @param {Object} the response sent back to the client
  * @api public
  */
- 
+
 exports.listWorkouts = function(req, res) {
   var token = token.decode(req);
 

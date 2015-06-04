@@ -32,6 +32,7 @@ app.post('/login', api.login);
 app.put('/login', api.login);
 app.post('/signup', api.signUp);
 app.delete('/user', auth.authorizeToken, api.deleteUser);
+app.get('/workouts', auth.authorizeToken, api.listWorkouts);
 
 console.log(c.blue('Started in dev') + c.green('\nApp ') + 'listening on port 8000 with live reload enabled');
   
