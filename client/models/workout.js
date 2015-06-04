@@ -5,10 +5,12 @@ var app = app || {};
 
   app.Workout = Backbone.Model.extend({
     defaults: {
+      id: '',
       name: '',
       maxWeight: '',
       week: 0,
-      createdAt: ''
+      createdAt: '',
+      username:''
     }
   });
 })();

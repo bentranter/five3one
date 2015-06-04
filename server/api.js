@@ -7,7 +7,8 @@ var bcrypt = require('bcrypt'),
   c = require('chalk'),
   thinky = require(__dirname + '/util/thinky.js'),
   token = require(__dirname + '/util/jwt.js'),
-  User = require(__dirname + '/models/user.js');
+  User = require(__dirname + '/models/user.js'),
+  Workout = require(__dirname + '/models/workout.js');
 
 // Keep reference to RethinkDB's driver
 var r = thinky.r;
@@ -139,5 +140,23 @@ exports.deleteUser = function(req, res) {
       message: 'Error when trying to delete user',
       err: err
     });
+  });
+};
+
+/**
+ * Returns all the workouts belonging to the user.
+ *
+ * @param {Object} the request sent to our server
+ * @param {Object} the response sent back to the client
+ * @api public
+ */
+ 
+exports.listWorkouts = function(req, res) {
+  var token = token.decode(req);
+
+  Workout.filter({
+    username: token.iss
+  }).run().then(function(workouts) {
+    res.json(workouts);
   });
 };
