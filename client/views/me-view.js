@@ -31,6 +31,7 @@ var app = app || {};
     login: function(e) {
       e.preventDefault();
 
+      var self = this;
       var username = this.$('#username').val();
       var password = this.$('#password').val();
 
@@ -39,7 +40,7 @@ var app = app || {};
         password: password
       }, {
         success: function(model, res, opts) {
-          console.log(res.token, res.iss);
+          self.model.set('signedIn', true);
         }
       });
     }
