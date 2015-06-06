@@ -11,7 +11,7 @@ var app = app || {};
 
     // Defaults for determining signed in state
     defaults: {
-      email: '',
+      username: '',
       name: '',
       signedIn: false
     },

@@ -6,7 +6,8 @@ var app = app || {};
   app.MeView = Backbone.View.extend({
     el: '#main',
 
-    template: _.template($('#meTpl').html()),
+    beforeLoginTemplate: _.template($('#meTpl').html()),
+    afterLoginTemplate:  _.template($('#meTplLoggedIn').html()),
 
     events: {
       'click #login': 'login',
@@ -14,18 +15,22 @@ var app = app || {};
 
     initialize: function() {
       this.render();
-      this.listenTo(this.model, 'change', this.render);
+      this.listenTo(this.model, 'change', this.renderLoggedIn);
     },
 
     render: function() {
       console.log('Rendered meTpl');
-      this.$el.append(this.template());
+      this.$el.append(this.beforeLoginTemplate());
+    },
+
+    renderLoggedIn: function() {
+      console.log('Logged in');
+      this.$el.html(this.afterLoginTemplate()); // replace HTML in this case
     },
 
     login: function(e) {
       e.preventDefault();
 
-      var self = this;
       var username = this.$('#username').val();
       var password = this.$('#password').val();
 
@@ -34,8 +39,7 @@ var app = app || {};
         password: password
       }, {
         success: function(model, res, opts) {
-          console.log(res.token);
-          self.model.signIn(res.token);
+          console.log(res.token, res.iss);
         }
       });
     }
