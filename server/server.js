@@ -35,7 +35,7 @@ app.delete('/user', auth.authorizeToken, api.deleteUser);
 app.get('/workouts', auth.authorizeToken, api.listWorkouts);
 
 console.log(c.blue('Started in dev') + c.green('\nApp ') + 'listening on port 8000 with live reload enabled');
-  
+
 // Start liveServer in development only
 liveServer.start({
   port: 8000,
