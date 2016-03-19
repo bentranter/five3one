@@ -4,6 +4,8 @@ A simple mobile web app to track your exercise.
 
 ### Usage
 
+Start RethinkDB then start the server:
+
 ```bash
 $ rethinkdb # then in another window,
 $ npm start
